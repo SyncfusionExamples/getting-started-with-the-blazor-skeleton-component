@@ -1,0 +1,61 @@
+﻿@page "/"
+
+<div class="e-card" style=" height:350px; width:400px;">
+    <table>
+        <tr>
+            <td style="width:30px;">
+                <div style="height:70px; width:30px; padding-left:10px;">
+                    @if(IsDataLoaded)
+                    {
+                        <img src="../profpic - Copy.jpg" style="height:70px; border-radius:50px;">
+                    }
+                    
+                    else
+                    {
+                        <SfSkeleton Shape=SkeletonType.Circle Width="60px"></SfSkeleton>
+
+                    }
+                       
+                                  
+                </div>
+            </td>
+            <td>
+                <div style="margin-left:56px;">
+                     <label id="name" style="font-size: 15px;">Laura Chauhan</label><br/>
+                     @*<SfSkeleton Shape="SkeletonType.Text" Height="15px" Width="200px"></SfSkeleton>*@
+                                                           
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div style="margin-top:15px; padding-left:10px;  padding-right:10px;">
+         <img src="../th.jpg" style="height:250px; width:388px; padding-right:10px; " />   
+         @*<SfSkeleton Shape=SkeletonType.Rectangle Height="250px" Width="375px"></SfSkeleton>*@
+     </div>
+</div>
+
+@code
+{
+    private bool IsDataLoaded;
+    protected async override void OnAfterRender(bool firstRender)
+    {
+        if(firstRender)
+        {
+            await Task.Delay(3000);
+            IsDataLoaded = true;
+            StateHasChanged();
+
+        }
+    }
+}
+<style>
+    .e-customize.e-skeleton {
+        background-color: #a8c1f2;
+    }
+
+    .e-customize.e-skeleton.e-shimmer-wave::after {    
+        background-image: linear-gradient(90deg, transparent calc(50% - 100px), rgb(30 128 234 / 50%) 50%, transparent calc(50% + 100px));
+     }
+
+</style>
+

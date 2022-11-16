@@ -1,0 +1,67 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<table>
+    <tr>
+        <td style="width:30px;">
+            <div style="height:70px; width:30px; padding-left:10px;">
+                @if (!isDataLoaded)
+                {
+                    <SfSkeleton Shape=SkeletonType.Circle Width="60px"></SfSkeleton>
+                }
+                else
+                {
+                    <img src="../profpic - Copy.jpg" style="height:70px; border-radius:50px;">
+                }
+            </div>
+        </td>
+        <td>
+            <div style="margin-left:56px;">
+                @if (!isDataLoaded)
+                {
+                    <SfSkeleton CssClass="cardText1" Width="200px" Height="15px"></SfSkeleton>
+
+                    <br />
+                }
+                else
+                {
+                    <label id="name" style="font-size: 15px;">Laura Chauhan</label>
+
+                    <br />
+                }
+
+            </div>
+        </td>
+    </tr>
+</table>
+<div style="margin-top:15px; padding-left:10px;  padding-right:10px;">
+    @if (!isDataLoaded)
+    {
+        <SfSkeleton Shape=SkeletonType.Rectangle Height="250px"></SfSkeleton>
+    }
+    else
+    {
+        <img src="../th.jpg" style="height:250px; width:388px; padding-right:10px; " />
+    }
+
+</div>
+
+@code
+{
+
+    private bool isDataLoaded;
+
+
+    protected async override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Task.Delay(3000);
+
+            isDataLoaded = true;
+            StateHasChanged();
+
+        }
+    }
+ }
