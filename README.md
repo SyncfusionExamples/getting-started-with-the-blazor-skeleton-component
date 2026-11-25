@@ -10,7 +10,7 @@ Watch the following video to get started with a Blazor Web Assembly app and add 
 
 ## Project prerequisites
 
-Make sure that you have the compatible versions of [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/ ) and [.NET Core SDK 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) or later version in your machine before starting to work on this project.
+Make sure that you have the compatible version of [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/ ) and the [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) or later version in your machine before starting to work on this project.
 
 ## How to run this application
 
